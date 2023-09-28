@@ -44,7 +44,7 @@ Heap* createHeap(){
   reserva->capac = 3;
 
 
-  reserva->heapArray = (heapElem*)malloc(sizeof(heapEle) * 3);
+  reserva->heapArray = (heapElem*)malloc(sizeof(heapElem) * 3);
 
   if(reserva->heapArray == NULL){
     perror("Error al reservar la memoria en el arreglo heapArray");

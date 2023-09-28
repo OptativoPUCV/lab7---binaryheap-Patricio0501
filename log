@@ -10,3 +10,9 @@ heap.c:47:49: error: ‘heapEle’ undeclared (first use in this function); did 
 heap.c:47:49: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 e412a1f
+Thu 28 Sep 2023 07:59:26 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+6e21577
