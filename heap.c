@@ -37,6 +37,8 @@ void heap_push(Heap* pq, void* data, int priority){
   int capacidad = pq->size;
   pq->size++;
 
+  pq->heapArray[capacidad].priority = priority;
+
   while(capacidad > 0 && pq->heapArray[capacidad].priority > pq->heapArray[(capacidad - 1) / 2].priority){
     heapElem temp = pq->heapArray[capacidad];
     pq->heapArray[capacidad] = pq->heapArray[(capacidad - 1) / 2];
