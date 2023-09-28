@@ -1,0 +1,12 @@
+Thu 28 Sep 2023 07:59:18 PM UTC: 
+ heap.c | 19 ++++++++++++++++++-
+ 1 file changed, 18 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:47:49: error: ‘heapEle’ undeclared (first use in this function); did you mean ‘heapElem’?
+   47 |   reserva->heapArray = (heapElem*)malloc(sizeof(heapEle) * 3);
+      |                                                 ^~~~~~~
+      |                                                 heapElem
+heap.c:47:49: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+e412a1f
