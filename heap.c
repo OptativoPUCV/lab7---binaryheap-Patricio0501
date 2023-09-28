@@ -27,7 +27,29 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
+  if(pq->size == pq->capac){
+    pq->capac = pq->capac * 2 + 1;
+    pq->heapArray = (heapElem*)realloc(pq->heapArray, sizeof(heapElem) * pq->capac);
+    if(pq->heapArray == NULL){
+      perror("Error al aumentar la capacidad del arreglo Heap");
+      exit(EXIT_FAILURE);
+    }
+  }
 
+  int capacidad = pq->size;
+  pq->heapArray[capacidad].data = data;
+  pq->heapArray[capacidad].priority = priority;
+
+  pq->size++;
+
+  while(capacidad > 0 || pq->heapArray[capacidad].priority > pq->heapArray[(capacidad - 1) / 2].priority){
+    heapElem temp = pq->heapArray[capacidad];
+    pq->heapArray[capacidad] = pq->heapArray[(capacidad - 1) / 2];
+    pq->heapArray[(capacidad - 1) / 2] = temp;
+
+    capacidad = (capacidad - 1) / 2;
+  }
+  
 }
 
 
