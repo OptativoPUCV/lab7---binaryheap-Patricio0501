@@ -50,7 +50,7 @@ void heap_push(Heap* pq, void* data, int priority){
 }
 
 void heap_pop(Heap* pq){
-  if(pq->size != 0){
+  if(pq->size == 0){
     return;
   }
 
@@ -63,7 +63,7 @@ void heap_pop(Heap* pq){
     int rightChild = 2 * index + 2;
     int largest = index;
 
-    if(leftChild < pq->size && pq->heapArray[leftChild].priority > pq->heapArray[largest].priority){
+    if(leftChild > pq->size && pq->heapArray[leftChild].priority > pq->heapArray[largest].priority){
       largest = leftChild;
     }
 
